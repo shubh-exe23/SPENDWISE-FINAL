@@ -588,7 +588,6 @@ static Future<Map<String, dynamic>?> sendMagicEntry(String text) async {
     }
   }
   // ── 6. GET AI FINANCIAL INSIGHTS ──
-  // ── 6. GET AI FINANCIAL INSIGHTS ──
   static Future<List<String>> getAiInsights(String currency) async {
     try {
       final headers = await _headers;
