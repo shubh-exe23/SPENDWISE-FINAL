@@ -1,0 +1,13 @@
+venv/
+.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+.env
+.env.*
+instance/
+*.db
+tests/
+Dockerfile
+.dockerignore
+gunicorn.conf.py

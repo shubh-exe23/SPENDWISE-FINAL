@@ -1,0 +1,19 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "flask",
+  "regions": [
+    "sin1"
+  ],
+  "functions": {
+    "app.py": {
+      "maxDuration": 60,
+      "excludeFiles": "{venv/**,tests/**,**/__pycache__/**,.env*}"
+    }
+  },
+  "crons": [
+    {
+      "path": "/internal/cron/subscriptions",
+      "schedule": "0 0 * * *"
+    }
+  ]
+}

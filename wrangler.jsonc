@@ -1,0 +1,32 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "spendwise",
+  "main": "deployment/worker.js",
+  "compatibility_date": "2026-09-29",
+  "assets": {
+    "directory": "./SpendWise/build/web",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": [
+      "/api",
+      "/api/*",
+      "/internal/reset-codes"
+    ]
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "RESET_CODES",
+        "class_name": "ResetCodes"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "ResetCodes"
+      ]
+    }
+  ]
+}
